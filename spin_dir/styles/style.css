@@ -1,0 +1,378 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
+body,
+html {
+  display: block;
+  overflow: hidden;
+  font-family: Quicksand;
+  background: rgb(0, 51, 101);
+}
+.fas{
+  color: rgb(238, 35, 71);
+}
+
+.has-content-centered {
+  justify-content: center;
+}
+
+.has-content-right {
+  justify-content: flex-end;
+}
+
+.is-flex,
+.modal .modal-card-foot button,
+.circle,
+.layer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.is-round,
+.modal .modal-card-foot button,
+.ellipses .ellipsis {
+  border-radius: 50%;
+}
+
+.is-strong {
+  font-weight: 700;
+}
+
+.title,
+.subtitle {
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.title.is-strong,
+.subtitle.is-strong {
+  font-weight: 700;
+  color: rgb(176, 235, 195);
+}
+
+.circle-graphic {
+  pointer-events: none;
+}
+.circle-graphic.pause .module,
+.circle-graphic.pause .node {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.layer {
+  scale: 0.9;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.module {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 30em;
+  left: calc(50% - 6em);
+  top: calc(50% - 6em);
+  transform-origin: 6em 6em;
+  -webkit-animation: spin 48s linear infinite;
+  animation: spin 48s linear infinite;
+  transition: transform 0.3s ease-out;
+}
+.module:before {
+  content: "";
+  display: block;
+  width: calc(100% - 6em);
+  position: absolute;
+  border-bottom: dotted 8px #05bbc1;
+  top: 50%;
+  left: 6em;
+  margin-top: -4px;
+}
+.module.pause .leaf {
+  opacity: 1;
+}
+.module .circle {
+  animation: spin 48s linear infinite reverse;
+  pointer-events: all;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+}
+.module .circle.pause {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.module .circle:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0px 10px 15px #15377a;
+}
+.module .circle:hover .title,
+.module .circle:hover .subtitle {
+  color: black !important;
+}
+.module:nth-child(1) {
+  -webkit-animation-delay: -8s;
+  animation-delay: -8s;
+}
+.module:nth-child(1) .circle {
+  -webkit-animation-delay: -8s;
+  animation-delay: -8s;
+}
+.module:nth-child(2) {
+  -webkit-animation-delay: -16s;
+  animation-delay: -16s;
+}
+.module:nth-child(2) .circle {
+  -webkit-animation-delay: -16s;
+  animation-delay: -16s;
+}
+.module:nth-child(3) {
+  -webkit-animation-delay: -24s;
+  animation-delay: -24s;
+}
+.module:nth-child(3) .circle {
+  -webkit-animation-delay: -24s;
+  animation-delay: -24s;
+}
+.module:nth-child(4) {
+  -webkit-animation-delay: -32s;
+  animation-delay: -32s;
+}
+.module:nth-child(4) .circle {
+  -webkit-animation-delay: -32s;
+  animation-delay: -32s;
+}
+.module:nth-child(5) {
+  -webkit-animation-delay: -40s;
+  animation-delay: -40s;
+}
+.module:nth-child(5) .circle {
+  -webkit-animation-delay: -40s;
+  animation-delay: -40s;
+}
+.module:nth-child(6) {
+  -webkit-animation-delay: -48s;
+  animation-delay: -48s;
+}
+.module:nth-child(6) .circle {
+  -webkit-animation-delay: -48s;
+  animation-delay: -48s;
+}
+
+.circle {
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+  position: relative;
+  border: solid 3px rgb(176, 235, 195);
+  background: #15377a;
+}
+.circle.is-main {
+  background-color: #15377a;
+  border-width: 15px;
+  width: 16.5em;
+  height: 16.5em;
+  overflow: hidden;
+  pointer-events: all;
+  cursor: pointer;
+  transition: background 0.2s ease-out, border 0.2s ease-out;
+}
+.circle.is-main:before {
+  content: "";
+  /* background: url("http://innou.io/beta/assets/images/maze-white.png") center; */
+  background-size: 50%;
+  position: absolute;
+  animation: spin 48s linear reverse infinite;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  z-index: 1;
+}
+.circle.is-main .title,
+.circle.is-main .subtitle {
+  position: relative;
+  z-index: 2;
+}
+.circle.is-main .subtitle {
+  margin-top: -1em;
+}
+.circle.is-main:hover {
+  background-color: rgb(176, 235, 195);
+  /* border-color: #ffffff; */
+}
+.circle.is-main:hover .title,
+.circle.is-main:hover .subtitle {
+  color: black;
+}
+.circle.is-second {
+  background: none;
+  border: dotted 1px #05bbc1;
+  width: 36em;
+  height: 36em;
+}
+.circle.is-third {
+  background: none;
+  border: dashed 5px #666666;
+  width: 42em;
+  height: 42em;
+  transition: border-color 0.2s ease-out;
+  animation: spin 192s linear infinite reverse;
+}
+.pause .circle.is-third {
+  border-color: rgb(238, 35, 71);
+}
+
+.leaf {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  /* background: url("https://making-the-web.com/sites/default/files/clipart/156536/green-leaf-icon-156536-2289922.png") no-repeat center; */
+  background-size: contain;
+  transform: rotate(40deg);
+  top: 4em;
+  right: -4.5em;
+  opacity: 0.3;
+}
+
+.ellipses {
+  transform: rotate(30deg);
+}
+.ellipses .ellipsis {
+  /* background: url("https://walls4u.co.uk/app/uploads/2018/10/AdobeStock_184585340.jpg"); */
+  position: absolute;
+  width: 48em;
+  height: 24em;
+  border: solid 2px rgb(176, 235, 195);
+  opacity: 0.25;
+}
+.ellipses .ellipsis:nth-child(1) {
+  -webkit-animation: spin linear infinite;
+  animation: spin linear infinite;
+  -webkit-animation-duration: 47s;
+  animation-duration: 47s;
+  -webkit-animation-delay: -8s;
+  animation-delay: -8s;
+}
+.ellipses .ellipsis:nth-child(2) {
+  -webkit-animation: spin linear infinite;
+  animation: spin linear infinite;
+  -webkit-animation-duration: 46s;
+  animation-duration: 46s;
+  -webkit-animation-delay: -16s;
+  animation-delay: -16s;
+}
+.ellipses .ellipsis:nth-child(3) {
+  -webkit-animation: spin linear infinite;
+  animation: spin linear infinite;
+  -webkit-animation-duration: 45s;
+  animation-duration: 45s;
+  -webkit-animation-delay: -24s;
+  animation-delay: -24s;
+}
+.ellipses .circle.is-cover {
+  position: absolute;
+  background: rgb(238, 35, 71);
+  border: none;
+  width: 42em;
+  height: 42em;
+}
+
+.modal .modal-card-head {
+  background: rgb(176, 235, 195);
+  border: none;
+  text-transform: uppercase;
+}
+.modal .modal-card-title {
+  color: black;
+}
+.modal .modal-card-body,
+.modal .modal-card-foot {
+  background: #15377a;
+  border: none;
+  color: #ffffff;
+}
+.modal .modal-card-body p {
+  min-height: 360px;
+  max-height: 360px;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  margin: 1em;
+  margin-right: 0;
+  margin-bottom: 0;
+  overflow: auto;
+}
+.modal .modal-card-body p.is-overflowing {
+  border-bottom: solid 4px #88062062;
+}
+.modal .modal-card-foot button {
+  background: rgb(176, 235, 195);
+  color: #ffffff;
+  border: none;
+  width: 2.5em;
+  height: 2.5em;
+}
+.modal.is-active .modal-card {
+  -webkit-animation: scaleUpBounce 0.2s ease-in-out;
+  animation: scaleUpBounce 0.2s ease-in-out;
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@-webkit-keyframes scaleUpBounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scaleUpBounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .layer {
+    scale: 1.6;
+    width: 150%;
+    height: 150%;
+    position: absolute;
+  }
+  .modal {
+    scale: 1.7;
+    font-size: 34px;
+  }
+}
+
+/* 
+@media screen and (max-width: 400px) {
+  .layer {
+    scale: 4;
+    width: 210%;
+    height: 150%;
+    position: absolute;
+  }
+  .modal {
+    scale: 2;
+  }
+} */
